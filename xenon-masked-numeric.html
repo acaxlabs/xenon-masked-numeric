@@ -1,0 +1,79 @@
+﻿<!--
+
+@demo  demo/index.html
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-input/paper-input.html" />
+<link rel="import" href="../iron-form-element-behavior/iron-form-element-behavior.html">
+
+
+<dom-module id="xenon-masked-numeric">
+    <template>
+        <paper-input-container id="container" invalid="{{invalid}}">
+            <label style="left:40px;" hidden$="[[!label]]">[[label]]</label>
+            <div class="horizontal layout">
+                <input is="iron-input"
+                       id="input"
+                       class="flex"
+                       aria-labelledby$="[[_ariaLabelledBy]]"
+                       aria-describedby$="[[_ariaDescribedBy]]"
+                       required$="[[required]]"
+                       bind-value="{{value}}"
+                       name$="[[name]]"
+                       disabled$="[[disabled]]"
+                       invalid="{{invalid}}"
+                       autofocus$="[[autofocus]]"
+                       inputmode$="[[inputmode]]"
+                       placeholder$="[[placeholder]]"
+                       readonly$="[[readonly]]"
+                       pattern$="[[regex]]"
+                       maxlength$="[[length]]">
+            </div>
+            <template is="dom-if" if="[[errorMessage]]">
+                <paper-input-error id="error">[[errorMessage]]</paper-input-error>
+            </template>
+        </paper-input-container>
+    </template>
+    <script>
+        Polymer({
+            is: 'xenon-masked-numeric',
+            behaviors: [
+              Polymer.PaperInputBehavior,
+              Polymer.IronValidatableBehavior,
+              Polymer.IronFormElementBehavior
+            ],
+            properties: {
+                value: { type: String, notify: true, observer: '_valueChanged' },
+                mask: { type: String },
+                length: { type: Number },
+                regex: { type: String, value: null }
+            },
+            validate: function () {
+                console.log(this.$.input.validate());
+                return this.$.input.validate();
+            },
+            _valueChanged: function (newValue, oldValue) {
+                if (newValue == null) return;
+
+                // remove all incoming non-numeric characters
+                newValue = newValue.replace(/[^0-9]/g, "");
+
+                // splice the separators back into the string
+                for (var i = 0; i < this.mask.length; i++) {
+                    if (i > newValue.length) break;
+                    var char = this.mask.charAt(i);
+                    if (char != "#")
+                        newValue = newValue.slice(0, i) + char + newValue.slice(i);
+                }
+
+                // if the new string is longer than the mask, trim it
+                if (newValue.length > this.mask.length)
+                    newValue = newValue.slice(0, this.mask.length)
+
+                // if this string ends in a separator, trim it
+                this.value = newValue.replace(/[^0-9]$/, "");
+            }
+        })
+    </script>
+</dom-module>
