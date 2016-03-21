@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="../xenon-masked-numeric.html" />
+</head>
+<body>
+    <xenon-masked-numeric id="cell" 
+                          mask="###-###-####" 
+                          regex="^\d{3}-\d{3}-\d{4}$" 
+                          value="{{value}}"
+                           label="cell number"></xenon-masked-numeric>
+
+    <xenon-masked-numeric id="ssn"
+                           mask="###-##-####" 
+                          regex="^(?!219-09-9999|078-05-1120|123-45-6789|111-11-1111|222-22-2222|333-33-3333|444-44-4444|555-55-5555|777-77-7777|888-88-8888)(?!666|000|9\d{2})\d{3}-(?!00)\d{2}-(?!0{4})\d{4}$"
+                           value="{{value}}" 
+                          label="ssn number">
+
+    </xenon-masked-numeric>
+    <button onclick="valid()">validate</button>
+</body>
+</html>
+<script>
+    function valid() {
+        console.log("ssn");
+        document.getElementById("ssn").validate();
+        console.log("cell");
+        document.getElementById("cell").validate();
+    }
+</script>
