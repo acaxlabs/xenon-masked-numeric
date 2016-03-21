@@ -1,1 +1,29 @@
-{    "transactionResponse": {      "responseCode": "1",      "authCode": "YARL5J",      "avsResultCode": "Y",      "cvvResultCode": "P",      "cavvResultCode": "2",      "transId": "2252464570",      "refTransID": "",      "transHash": "712DFEF5FD7DCD64E0C3FAE46C59236E",      "testRequest": "0",      "accountNumber": "XXXX0012",      "accountType": "Discover",      "messages": [        {          "code": "1",          "description": "This transaction has been approved."        }      ]    },    "messages": {      "resultCode": 0,      "message": [        {          "code": "I00001",          "text": "Successful."        }      ]    }  }
+{
+  "name": "xenon-masked-numeric",
+  "version": "1.0",
+  "description": "masks inputs to custom patterns",
+  "authors": [
+    "ACA[X]Labs"
+  ],
+  "keywords": [
+    "web-components",
+    "polymer",
+    "router"
+  ],
+  "main": "xenon-masked-numeric.html",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/BenefitGeek/XenonMaskedNumeric.git"
+  },
+  "license": "https://github.com/BenefitGeek/XenonMaskedNumeric/blob/master/LICENSE.txt",
+  "homepage": "https://github.com/BenefitGeek/XenonMaskedNumeric",
+  "ignore": [],
+    "dependencies": {
+        "polymer": "Polymer/polymer#^1.2.0",
+		"paper-input": "PolymerElements/paper-input#^1.0.15",
+		"iron-form-element-behavior": "PolymerElements/iron-form-element-behavior#^1.0.0",
+    },
+     "devDependencies": {
+  }
+}
