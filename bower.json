@@ -22,7 +22,7 @@
     "dependencies": {
         "polymer": "Polymer/polymer#^1.2.0",
 		"paper-input": "PolymerElements/paper-input#^1.0.15",
-		"iron-form-element-behavior": "PolymerElements/iron-form-element-behavior#^1.0.0",
+		"iron-form-element-behavior": "PolymerElements/iron-form-element-behavior#^1.0.0"
     },
      "devDependencies": {
   }
