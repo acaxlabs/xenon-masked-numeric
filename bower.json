@@ -14,10 +14,10 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/BenefitGeek/XenonMaskedNumeric.git"
+    "url": "git://github.com/acaxlabs/xenon-masked-numeric.git"
   },
-  "license": "https://github.com/BenefitGeek/XenonMaskedNumeric/blob/master/LICENSE.txt",
-  "homepage": "https://github.com/BenefitGeek/XenonMaskedNumeric",
+  "license": "https://github.com/acaxlabs/xenon-masked-numeric/blob/master/LICENSE.txt",
+  "homepage": "https://github.com/acaxlabs/xenon-masked-numeric",
   "ignore": [],
     "dependencies": {
         "polymer": "Polymer/polymer#^1.2.0",
