@@ -8,7 +8,11 @@
   "keywords": [
     "web-components",
     "polymer",
-    "router"
+    "masking",
+    "numeric",
+    "input",
+    "pattern",
+    "regex"
   ],
   "main": "xenon-masked-numeric.html",
   "private": true,
