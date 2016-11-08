@@ -50,7 +50,6 @@
                 regex: { type: String, value: null }
             },
             validate: function () {
-                console.log(this.$.input.validate());
                 return this.$.input.validate();
             },
             _valueChanged: function (newValue, oldValue) {
