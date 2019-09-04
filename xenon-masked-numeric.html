@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 
 @demo  demo/index.html
 -->
@@ -10,7 +10,10 @@
 
 <dom-module id="xenon-masked-numeric">
     <template>
-        <paper-input-container id="container" invalid="{{invalid}}">
+        <style>
+            :host{display:block;}
+        </style>
+        <paper-input-container id="container" invalid="{{invalid}}"  always-float-label="[[alwaysFloatLabel]]">
             <label hidden$="[[!label]]">[[label]]</label>
             <div class="horizontal layout">
                 <input is="iron-input"
